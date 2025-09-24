@@ -55,10 +55,10 @@ P = [1; TD2; TD3; TD4];
 % Moments
 Q = [1 0 0 0; 1 -(lbx+lvx) 0 0; 1 (lbx+lvx) 0 0];
 % Power spectral density of delta_1
-delta1dot = sqrt(2*Av*V);
+% delta1dot = sqrt(2*Av*V);
 % Obtain TF
 % TFs = [1 0; 1 lbx+lvx; 1 -lbx-lvx] * [1 0 0 0; 0 1 0 0] * (F\K) * P * 1/(1 + (s/40*pi)) * delta1dot; %*[d1; d2; d3; d4];
-TFs = s * Q * (F\K) * P * delta1dot * 1/(1 + (s/40*pi));
+TFs = s * Q * (F\K) * P * 1/(1 + (s/40*pi));
 % Final TF should be
 % TFs = s * Q * (F\G) * P * delta1hat
 %%
